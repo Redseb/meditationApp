@@ -3,6 +3,8 @@ const app = () => {
     const play = document.querySelector('.play');
     const outline = document.querySelector('.moving-outline circle');
     const video = document.querySelector('.vid-container video');
+    const visibilityButton = document.querySelector('#visibility');
+    var isVisible = true;
 
     //Sounds
     const sounds = document.querySelectorAll('.sound-picker button');
@@ -14,12 +16,38 @@ const app = () => {
     //Duration
     let fakeDuration = 600;
 
+    //Toggle Visibility
+    visibilityButton.addEventListener('click', () => {
+        isVisible = !isVisible; //Toggle visibility variables
+        if (!isVisible) {
+            timeSelect.forEach(element => {
+                element.style.display = "none";
+            });
+            document.querySelectorAll('.player-container').forEach(element => {
+                element.style.display = "none";
+            });
+            document.querySelectorAll('.sound-picker').forEach(element => {
+                element.style.display = "none";
+            });
+        } else {
+            timeSelect.forEach(element => {
+                element.style.display = null;
+            });
+            document.querySelectorAll('.player-container').forEach(element => {
+                element.style.display = null;
+            });
+            document.querySelectorAll('.sound-picker').forEach(element => {
+                element.style.display = null;
+            });
+        }
+    });
+
     outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
 
     //Pick different sounds
-    sounds.forEach(sound =>{
-        sound.addEventListener('click', function(){
+    sounds.forEach(sound => {
+        sound.addEventListener('click', function () {
             song.src = this.getAttribute('data-sound');
             video.src = this.getAttribute('data-video');
             checkPlaying(song);
@@ -65,13 +93,13 @@ const app = () => {
         outline.style.strokeDashoffset = progress;
         //Animate the text
         timeDisplay.textContent = `${minutes}:${seconds}`;
-        if(currentTime >= fakeDuration){
+        if (currentTime >= fakeDuration) {
             song.pause();
             song.currentTime = 0;
             play.src = './svg/play.svg';
             video.pause();
         }
-    
+
     };
 };
 

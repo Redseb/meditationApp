@@ -74,13 +74,29 @@ video {
 }
 
 .sound-picker button:nth-child(1) {
-    background: #4972a1;
+    background: rgb(158, 180, 33)
 }
 
 .sound-picker button:nth-child(2) {
-    background: #a14f49;
+    background: rgb(198, 56, 211);
+}
+
+.sound-picker button:nth-child(3) {
+    background: rgb(54, 52, 194);
 }
 
 .sound-picker button img {
     height: 100%;
+}
+
+#visibility{
+    background: black;
+    position: absolute;
+    right: 50px;
+    border: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 30px;
+    cursor: pointer;
 }

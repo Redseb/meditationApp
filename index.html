@@ -15,8 +15,8 @@
     <div class="app">
 
         <div class="vid-container">
-            <video loop>
-                <source src="./video/rain.mp4" type="video/mp4">
+            <video loop muted>
+                <source src="./video/blackHole.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -25,9 +25,10 @@
             <button data-time="300">5 Minutes</button>
             <button data-time="600">10 Minutes</button>
         </div>
+
         <div class="player-container">
-            <audio class="song">
-                <source src="./sounds/rain.mp3" />
+            <audio class="song" loop>
+                <source src="./sounds/lofiLong.mp3" />
             </audio>
             <img src="./svg/play.svg" alt="play" class="play">
             <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
@@ -40,12 +41,20 @@
             </svg>
             <h3 class="time-display">0:00</h3>
         </div>
+
         <div class="sound-picker">
-            <button data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4"><img src="./svg/rain.svg"
-                    alt="rain"></button>
-            <button data-sound="./sounds/beach.mp3" data-video="./video/beach.mp4"><img src="./svg/beach.svg"
-                    alt="beach"></button>
+            <!--Lofi1 || Black Hole || Circuit Brain-->
+            <button data-sound="./sounds/lofiLong.mp3" data-video="./video/blackHole.mp4"><img src="./svg/circuitBrain.svg"
+                    alt="circuit brain"></button>
+            <!--Chinese Garden || Kaleidoscope || Glasses-->
+            <button data-sound="./sounds/chineseGardenLong.mp3" data-video="./video/kaleidoscope.mp4"><img src="./svg/glasses.svg"
+                    alt="glasses"></button>
+            <!--Video Game Garden || LEDS || Circuit Chat-->
+            <button data-sound="./sounds/videoGameGardenLong.mp3" data-video="./video/led.mp4"><img src="./svg/circuitChat.svg"
+                    alt="circuit chat"></button>
         </div>
+
+        <button id="visibility"><img src="./svg/eyeGear.svg" alt="visibility"></button>
     </div>
 
     <script src="app.js"></script>
